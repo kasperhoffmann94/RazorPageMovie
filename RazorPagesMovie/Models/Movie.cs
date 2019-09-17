@@ -11,6 +11,11 @@ namespace RazorPagesMovie.Models
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string Title { get; set; }
+        [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
+        [Display(Name = "Main Character")]
+        [StringLength(60, MinimumLength = 2)]
+        [Required]
+        public string MainCharacter { get; set; }
 
         [Display(Name = "Release Date")]
         [DataType(DataType.Date)]
